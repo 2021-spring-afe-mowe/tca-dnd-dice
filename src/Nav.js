@@ -1,12 +1,13 @@
 import React from 'react';
-import { BottomNavigation, BottomNavigationAction, Icon } from '@material-ui/core';
+import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
+import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 
 function Nav() {
     return (
         <BottomNavigation>
-            <BottomNavigationAction label="dice" icon={<RestoreIcon />} />
-            <BottomNavigationAction label="stats" icon={<RestoreIcon />} />
-            <BottomNavigationAction label="stats" icon={<RestoreIcon />} />
+            <BottomNavigationAction label="dice" icon={<AccessAlarmIcon />} />
+            <BottomNavigationAction label="stats" icon={<AccessAlarmIcon />} />
+            <BottomNavigationAction label="stats" icon={<AccessAlarmIcon />} />
         </BottomNavigation>
     );
   }
