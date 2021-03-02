@@ -5,8 +5,8 @@ import {
     , Typography
     , Container
     , TextField
-    , Button,
-    IconButton
+    , Button
+    , IconButton
 } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
@@ -29,7 +29,7 @@ function AddDice() {
                     required
                     id="new-die-name"
                     label="Die Name - Required"
-                    defaultValue="Enter die name"
+                    placeholder="Enter die name"
                     variant="outlined"
                     margin="normal"
                     position="center"

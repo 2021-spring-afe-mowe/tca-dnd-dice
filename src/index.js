@@ -5,11 +5,13 @@ import reportWebVitals from './reportWebVitals';
 import Nav from './Nav';
 import DiceList from './DiceList';
 import AddDie from './AddDie';
+import IndividualStats from './IndividualStats';
 
 ReactDOM.render(
     <React.StrictMode>
         {/* <DiceList /> */}
-        <AddDie />
+        {/* <AddDie /> */}
+        <IndividualStats />
         <Nav />
     </React.StrictMode>,
     document.getElementById('root')
