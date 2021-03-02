@@ -1,13 +1,13 @@
 import React from 'react';
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
-import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+import CasinoOutlined from '@material-ui/icons/CasinoOutlined';
+import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 
 function Nav() {
     return (
         <BottomNavigation>
-            <BottomNavigationAction label="dice" icon={<AccessAlarmIcon />} />
-            <BottomNavigationAction label="stats" icon={<AccessAlarmIcon />} />
-            <BottomNavigationAction label="stats" icon={<AccessAlarmIcon />} />
+            <BottomNavigationAction label="dice" icon={<CasinoOutlined />} />
+            <BottomNavigationAction label="stats" icon={<FormatListNumberedIcon />} />
         </BottomNavigation>
     );
   }
