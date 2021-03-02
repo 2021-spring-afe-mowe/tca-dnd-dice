@@ -4,10 +4,12 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Nav from './Nav';
 import DiceList from './DiceList';
+import AddDie from './AddDie';
 
 ReactDOM.render(
     <React.StrictMode>
-        <DiceList />
+        {/* <DiceList /> */}
+        <AddDie />
         <Nav />
     </React.StrictMode>,
     document.getElementById('root')

@@ -1,4 +1,4 @@
-import './DiceList.css';
+import React from 'react';
 import {
     AppBar
     , Toolbar
@@ -25,6 +25,90 @@ function DiceList() {
             
             <Container>
                 <List>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Casino />
+                        </ListItemIcon>
+                        <ListItemText primary="Blue Speckled" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Casino />
+                        </ListItemIcon>
+                        <ListItemText primary="Blue Speckled" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Casino />
+                        </ListItemIcon>
+                        <ListItemText primary="Blue Speckled" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Casino />
+                        </ListItemIcon>
+                        <ListItemText primary="Blue Speckled" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Casino />
+                        </ListItemIcon>
+                        <ListItemText primary="Blue Speckled" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Casino />
+                        </ListItemIcon>
+                        <ListItemText primary="Blue Speckled" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Casino />
+                        </ListItemIcon>
+                        <ListItemText primary="Blue Speckled" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Casino />
+                        </ListItemIcon>
+                        <ListItemText primary="Blue Speckled" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Casino />
+                        </ListItemIcon>
+                        <ListItemText primary="Blue Speckled" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Casino />
+                        </ListItemIcon>
+                        <ListItemText primary="Blue Speckled" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Casino />
+                        </ListItemIcon>
+                        <ListItemText primary="Blue Speckled" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Casino />
+                        </ListItemIcon>
+                        <ListItemText primary="Blue Speckled" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
                     <ListItem button>
                         <ListItemIcon>
                             <Casino />
