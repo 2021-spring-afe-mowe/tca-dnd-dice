@@ -5,7 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
     root: {
         height: 400,
-        margin: 16
+        margin: 16,
+        alignItems: "center"
     }
 });
 
@@ -95,7 +96,7 @@ const marks = [
 function RollSlider() {
     const classes = useStyles();
     return (
-        <div className={classes.root} margin-top="10rem">
+        <div className={classes.root}>
             <Slider
                 defaultValue={10}
                 valueLabelDisplay="auto"

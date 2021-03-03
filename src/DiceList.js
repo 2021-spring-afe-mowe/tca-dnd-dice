@@ -8,9 +8,11 @@ import {
     , ListItem
     , ListItemIcon
     , ListItemText
+    , Fab
 } from '@material-ui/core';
 import Casino from '@material-ui/icons/Casino';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import AddIcon from '@material-ui/icons/Add';
 
 function DiceList() {
     return (
@@ -117,9 +119,12 @@ function DiceList() {
                         <ArrowForwardIosIcon />
                     </ListItem>
                 </List>
+                <Fab color="secondary">
+                    <AddIcon />
+                </Fab>
             </Container>
         </div>
     );
-  }
+}
 
 export default DiceList;

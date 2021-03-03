@@ -11,10 +11,10 @@ import AddRoll from './AddRoll';
 ReactDOM.render(
     <React.StrictMode>
         {/* <DiceList /> */}
-        {/* <AddDie /> */}
+        <AddDie />
         {/* <IndividualStats /> */}
-        <AddRoll />
-        <Nav />
+        {/* <AddRoll /> */}
+        {/* <Nav /> */}
     </React.StrictMode>,
     document.getElementById('root')
 );

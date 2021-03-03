@@ -9,8 +9,18 @@ import {
     , IconButton
 } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    root: {
+        height: 400,
+        margin: 16,
+        textAlign: "center"
+    }
+});
 
 function AddDice() {
+    const classes = useStyles();
     return (
         <div>
             <AppBar position="static">
@@ -25,6 +35,7 @@ function AddDice() {
             </AppBar>
             
             <Container>
+                <div className={classes.root}>
                 <TextField
                     required
                     id="new-die-name"
@@ -41,6 +52,7 @@ function AddDice() {
                 <Button variant="contained" color="secondary">
                     Add Die
                 </Button>
+                </div>
             </Container>
         </div>
     );

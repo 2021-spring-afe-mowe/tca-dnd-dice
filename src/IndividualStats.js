@@ -57,6 +57,6 @@ function IndividualStats() {
             </Container>
         </div>
     );
-  }
+}
 
 export default IndividualStats;
