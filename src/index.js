@@ -6,12 +6,14 @@ import Nav from './Nav';
 import DiceList from './DiceList';
 import AddDie from './AddDie';
 import IndividualStats from './IndividualStats';
+import AddRoll from './AddRoll';
 
 ReactDOM.render(
     <React.StrictMode>
         {/* <DiceList /> */}
         {/* <AddDie /> */}
-        <IndividualStats />
+        {/* <IndividualStats /> */}
+        <AddRoll />
         <Nav />
     </React.StrictMode>,
     document.getElementById('root')

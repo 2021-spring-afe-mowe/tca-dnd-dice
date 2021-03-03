@@ -23,7 +23,7 @@ function IndividualStats() {
                         <ArrowBackIosIcon />
                     </IconButton>
                     <Typography variant="h6">
-                        Dice
+                        Die Stats
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -37,6 +37,7 @@ function IndividualStats() {
                     <ListItem>
                         2
                     </ListItem>
+
                     <ListSubheader />
                         <ListItemText primary="20s Rolled" />
                     <ListSubheader />
@@ -44,6 +45,7 @@ function IndividualStats() {
                     <ListItem>
                         3
                     </ListItem>
+
                     <ListSubheader />
                         <ListItemText primary="Roll Average" />
                     <ListSubheader />

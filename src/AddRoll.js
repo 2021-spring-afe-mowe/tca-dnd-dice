@@ -9,8 +9,9 @@ import {
     , IconButton
 } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import RollSlider from './RollSlider';
 
-function AddDice() {
+function AddRoll() {
     return (
         <div>
             <AppBar position="static">
@@ -19,31 +20,20 @@ function AddDice() {
                         <ArrowBackIosIcon />
                     </IconButton>
                     <Typography variant="h6">
-                        Add Dice
+                        Add Roll
                     </Typography>
                 </Toolbar>
             </AppBar>
             
             <Container>
-                <TextField
-                    required
-                    id="new-die-name"
-                    label="Die Name - Required"
-                    placeholder="Enter die name"
-                    variant="outlined"
-                    margin="normal"
-                    position="center"
-                />
+                <RollSlider />
 
-                <br />
-                <br />
-                
                 <Button variant="contained" color="secondary">
-                    Add Die
+                    Add Roll
                 </Button>
             </Container>
         </div>
     );
   }
 
-export default AddDice;
+export default AddRoll;
