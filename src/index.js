@@ -11,8 +11,8 @@ import AddRoll from './AddRoll';
 ReactDOM.render(
     <React.StrictMode>
         {/* <DiceList /> */}
-        <AddDie />
-        {/* <IndividualStats /> */}
+        {/* <AddDie /> */}
+        <IndividualStats />
         {/* <AddRoll /> */}
         {/* <Nav /> */}
     </React.StrictMode>,

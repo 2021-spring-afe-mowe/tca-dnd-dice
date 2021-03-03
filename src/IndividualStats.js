@@ -13,8 +13,17 @@ import {
     , Divider
 } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import AddIcon from '@material-ui/icons/Add';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    IconButton: {
+        margin: "0 0 0 auto"
+    }
+});
 
 function IndividualStats() {
+    const classes = useStyles();
     return (
         <div>
             <AppBar position="static">
@@ -25,6 +34,12 @@ function IndividualStats() {
                     <Typography variant="h6">
                         Die Stats
                     </Typography>
+                    <IconButton  className={classes.IconButton} color="secondary">
+                        <AddIcon />
+                        <Typography variant="h6">
+                            Add Roll
+                        </Typography>
+                    </IconButton>
                 </Toolbar>
             </AppBar>
             

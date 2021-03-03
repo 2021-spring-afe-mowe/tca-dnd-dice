@@ -10,8 +10,16 @@ import {
 } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import RollSlider from './RollSlider';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    root: {
+        textAlign: "center"
+    }
+});
 
 function AddRoll() {
+    const classes = useStyles();
     return (
         <div>
             <AppBar position="static">
@@ -25,7 +33,7 @@ function AddRoll() {
                 </Toolbar>
             </AppBar>
             
-            <Container>
+            <Container className={classes.root}>
                 <RollSlider />
 
                 <Button variant="contained" color="secondary">

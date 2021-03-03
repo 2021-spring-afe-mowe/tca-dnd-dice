@@ -8,13 +8,21 @@ import {
     , ListItem
     , ListItemIcon
     , ListItemText
-    , Fab
+    , IconButton
 } from '@material-ui/core';
 import Casino from '@material-ui/icons/Casino';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import AddIcon from '@material-ui/icons/Add';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    IconButton: {
+        margin: "0 0 0 auto"
+    }
+});
 
 function DiceList() {
+    const classes = useStyles();
     return (
         <div>
             <AppBar position="static">
@@ -22,6 +30,12 @@ function DiceList() {
                     <Typography variant="h6">
                         Dice
                     </Typography>
+                    <IconButton  className={classes.IconButton} color="secondary">
+                        <AddIcon />
+                        <Typography variant="h6">
+                            Add Die
+                        </Typography>
+                    </IconButton>
                 </Toolbar>
             </AppBar>
             
@@ -38,90 +52,24 @@ function DiceList() {
                         <ListItemIcon>
                             <Casino />
                         </ListItemIcon>
-                        <ListItemText primary="Blue Speckled" />
+                        <ListItemText primary="Green and Gold" />
                         <ArrowForwardIosIcon />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
                             <Casino />
                         </ListItemIcon>
-                        <ListItemText primary="Blue Speckled" />
+                        <ListItemText primary="White Speckled" />
                         <ArrowForwardIosIcon />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
                             <Casino />
                         </ListItemIcon>
-                        <ListItemText primary="Blue Speckled" />
-                        <ArrowForwardIosIcon />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <Casino />
-                        </ListItemIcon>
-                        <ListItemText primary="Blue Speckled" />
-                        <ArrowForwardIosIcon />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <Casino />
-                        </ListItemIcon>
-                        <ListItemText primary="Blue Speckled" />
-                        <ArrowForwardIosIcon />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <Casino />
-                        </ListItemIcon>
-                        <ListItemText primary="Blue Speckled" />
-                        <ArrowForwardIosIcon />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <Casino />
-                        </ListItemIcon>
-                        <ListItemText primary="Blue Speckled" />
-                        <ArrowForwardIosIcon />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <Casino />
-                        </ListItemIcon>
-                        <ListItemText primary="Blue Speckled" />
-                        <ArrowForwardIosIcon />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <Casino />
-                        </ListItemIcon>
-                        <ListItemText primary="Blue Speckled" />
-                        <ArrowForwardIosIcon />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <Casino />
-                        </ListItemIcon>
-                        <ListItemText primary="Blue Speckled" />
-                        <ArrowForwardIosIcon />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <Casino />
-                        </ListItemIcon>
-                        <ListItemText primary="Blue Speckled" />
-                        <ArrowForwardIosIcon />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <Casino />
-                        </ListItemIcon>
-                        <ListItemText primary="Blue Speckled" />
+                        <ListItemText primary="Purple" />
                         <ArrowForwardIosIcon />
                     </ListItem>
                 </List>
-                <Fab color="secondary">
-                    <AddIcon />
-                </Fab>
             </Container>
         </div>
     );

@@ -29,29 +29,29 @@ function AddDice() {
                         <ArrowBackIosIcon />
                     </IconButton>
                     <Typography variant="h6">
-                        Add Dice
+                        Add Die
                     </Typography>
                 </Toolbar>
             </AppBar>
             
             <Container>
                 <div className={classes.root}>
-                <TextField
-                    required
-                    id="new-die-name"
-                    label="Die Name - Required"
-                    placeholder="Enter die name"
-                    variant="outlined"
-                    margin="normal"
-                    position="center"
-                />
+                    <TextField
+                        required
+                        id="new-die-name"
+                        label="Die Name - Required"
+                        placeholder="Enter die name"
+                        variant="outlined"
+                        margin="normal"
+                        position="center"
+                    />
 
-                <br />
-                <br />
-                
-                <Button variant="contained" color="secondary">
-                    Add Die
-                </Button>
+                    <br />
+                    <br />
+                    
+                    <Button variant="contained" color="secondary">
+                        Add Die
+                    </Button>
                 </div>
             </Container>
         </div>
