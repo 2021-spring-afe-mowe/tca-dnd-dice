@@ -15,6 +15,7 @@ import {
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import AddIcon from '@material-ui/icons/Add';
 import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
     IconButton: {
@@ -24,17 +25,29 @@ const useStyles = makeStyles({
 
 function IndividualStats() {
     const classes = useStyles();
+    const history = useHistory();
+
+    const addRoll = () => {
+        history.push("/addRoll");
+    }
+
     return (
         <div>
             <AppBar position="static">
                 <Toolbar>
-                    <IconButton>
+                    <IconButton
+                        onClick={() => history.goBack()}
+                    >
                         <ArrowBackIosIcon />
                     </IconButton>
                     <Typography variant="h6">
                         Die Stats
                     </Typography>
-                    <IconButton  className={classes.IconButton} color="secondary">
+                    <IconButton
+                        onClick={addRoll}
+                        className={classes.IconButton}
+                        color="secondary"
+                    >
                         <AddIcon />
                         <Typography variant="h6">
                             Add Roll

@@ -30,6 +30,10 @@ export const DiceList = () => {
         history.push("/addDie");
     }
 
+    const individualStats = () => {
+        history.push("/individualStats");
+    }
+
     return (
         <div>
             <AppBar position="static">
@@ -52,7 +56,9 @@ export const DiceList = () => {
             
             <Container>
                 <List>
-                    <ListItem button>
+                    <ListItem button
+                        onClick={individualStats}
+                    >
                         <ListItemIcon>
                             <Casino />
                         </ListItemIcon>

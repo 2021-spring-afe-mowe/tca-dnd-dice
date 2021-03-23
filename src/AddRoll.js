@@ -11,6 +11,7 @@ import {
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import RollSlider from './RollSlider';
 import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
     root: {
@@ -20,11 +21,15 @@ const useStyles = makeStyles({
 
 function AddRoll() {
     const classes = useStyles();
+    const history = useHistory();
+
     return (
         <div>
             <AppBar position="static">
                 <Toolbar>
-                    <IconButton>
+                    <IconButton
+                        onClick={() => history.goBack()}
+                    >
                         <ArrowBackIosIcon />
                     </IconButton>
                     <Typography variant="h6">
