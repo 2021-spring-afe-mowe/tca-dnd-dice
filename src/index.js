@@ -1,20 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Nav from './Nav';
-import DiceList from './DiceList';
-import AddDie from './AddDie';
-import IndividualStats from './IndividualStats';
-import AddRoll from './AddRoll';
 
 ReactDOM.render(
     <React.StrictMode>
-        {/* <DiceList /> */}
-        {/* <AddDie /> */}
-        <IndividualStats />
-        {/* <AddRoll /> */}
-        {/* <Nav /> */}
+        <App />
     </React.StrictMode>,
     document.getElementById('root')
 );

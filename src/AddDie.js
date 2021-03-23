@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
     root: {
@@ -21,11 +22,15 @@ const useStyles = makeStyles({
 
 function AddDice() {
     const classes = useStyles();
+    const history = useHistory();
+
     return (
         <div>
             <AppBar position="static">
                 <Toolbar>
-                    <IconButton>
+                    <IconButton
+                        onClick={() => history.goBack()}
+                    >
                         <ArrowBackIosIcon />
                     </IconButton>
                     <Typography variant="h6">

@@ -14,6 +14,7 @@ import Casino from '@material-ui/icons/Casino';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import AddIcon from '@material-ui/icons/Add';
 import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
     IconButton: {
@@ -21,8 +22,14 @@ const useStyles = makeStyles({
     }
 });
 
-function DiceList() {
+export const DiceList = () => {
     const classes = useStyles();
+    const history = useHistory();
+
+    const addDie = () => {
+        history.push("/addDie");
+    }
+
     return (
         <div>
             <AppBar position="static">
@@ -30,7 +37,11 @@ function DiceList() {
                     <Typography variant="h6">
                         Dice
                     </Typography>
-                    <IconButton  className={classes.IconButton} color="secondary">
+                    <IconButton
+                        onClick={addDie}
+                        className={classes.IconButton}
+                        color="secondary"
+                    >
                         <AddIcon />
                         <Typography variant="h6">
                             Add Die
