@@ -14,25 +14,14 @@ import {
 } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import AddIcon from '@material-ui/icons/Add';
-import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
-
-const useStyles = makeStyles({
-    IconButton: {
-        margin: "0 0 0 auto"
-    }
-});
+import Nav from './Nav';
 
 function IndividualStats() {
-    const classes = useStyles();
     const history = useHistory();
 
-    const addRoll = () => {
-        history.push("/addRoll");
-    }
-
     return (
-        <div>
+        <>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton
@@ -43,16 +32,6 @@ function IndividualStats() {
                     <Typography variant="h6">
                         Die Stats
                     </Typography>
-                    <IconButton
-                        onClick={addRoll}
-                        className={classes.IconButton}
-                        color="secondary"
-                    >
-                        <AddIcon />
-                        <Typography variant="h6">
-                            Add Roll
-                        </Typography>
-                    </IconButton>
                 </Toolbar>
             </AppBar>
             
@@ -83,7 +62,9 @@ function IndividualStats() {
                     </ListItem>
                 </List>
             </Container>
-        </div>
+
+            <Nav />
+        </>
     );
 }
 

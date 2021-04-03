@@ -25,7 +25,7 @@ function AddDice() {
     const history = useHistory();
 
     return (
-        <div>
+        <>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton
@@ -59,7 +59,7 @@ function AddDice() {
                     </Button>
                 </div>
             </Container>
-        </div>
+        </>
     );
   }
 

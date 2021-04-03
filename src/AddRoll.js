@@ -15,7 +15,8 @@ import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
     root: {
-        textAlign: "center"
+        textAlign: "center",
+        margin: "0 0 5em 0"
     }
 });
 
@@ -24,7 +25,7 @@ function AddRoll() {
     const history = useHistory();
 
     return (
-        <div>
+        <>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton
@@ -45,7 +46,7 @@ function AddRoll() {
                     Add Roll
                 </Button>
             </Container>
-        </div>
+        </>
     );
   }
 

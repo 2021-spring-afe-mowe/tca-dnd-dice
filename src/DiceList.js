@@ -13,22 +13,11 @@ import {
 import Casino from '@material-ui/icons/Casino';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import AddIcon from '@material-ui/icons/Add';
-import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
-
-const useStyles = makeStyles({
-    IconButton: {
-        margin: "0 0 0 auto"
-    }
-});
+import Nav from './Nav';
 
 export const DiceList = () => {
-    const classes = useStyles();
     const history = useHistory();
-
-    const addDie = () => {
-        history.push("/addDie");
-    }
 
     const individualStats = () => {
         history.push("/individualStats");
@@ -41,16 +30,6 @@ export const DiceList = () => {
                     <Typography variant="h6">
                         Dice
                     </Typography>
-                    <IconButton
-                        onClick={addDie}
-                        className={classes.IconButton}
-                        color="secondary"
-                    >
-                        <AddIcon />
-                        <Typography variant="h6">
-                            Add Die
-                        </Typography>
-                    </IconButton>
                 </Toolbar>
             </AppBar>
             
@@ -88,6 +67,8 @@ export const DiceList = () => {
                     </ListItem>
                 </List>
             </Container>
+
+            <Nav />
         </div>
     );
 }
