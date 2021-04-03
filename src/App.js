@@ -1,6 +1,4 @@
 import { React, useState } from 'react';
-import ReactDOM from 'react-dom';
-import Nav from './Nav';
 import DiceList from './DiceList';
 import AddDie from './AddDie';
 import IndividualStats from './IndividualStats';
@@ -14,21 +12,32 @@ import {
 function App() {
 
     const initialAppData = {
-        allRolls: [
+        allDice: [
             {
                 dieName: "Blue Speckled"
-                , roll: 5
-                , time: "9pm on saturday"
-            }
-            , {
-                dieName: "Blue Speckled"
-                , roll: 18
-                , time: "10pm on saturday"
+                , rolls: [
+                    {
+                        roll: 5
+                        , time: "9pm on saturday"
+                    }
+                    , {
+                        roll: 18
+                        , time: "10pm on saturday"
+                    }
+                ]
             }
             , {
                 dieName: "Green"
-                , roll: 14
-                , time: "11pm on saturday"
+                , rolls: [
+                    {
+                        roll: 13
+                        , time: "9:30pm on saturday"
+                    }
+                    , {
+                        roll: 20
+                        , time: "11pm on saturday"
+                    }
+                ]
             }
         ]
     };
@@ -37,14 +46,14 @@ function App() {
 
     console.log(appData);
 
-/*    const rollDie = () => {
+/*    const rollDie = (rollData) => {
         updateAppData({
             ...appData
-            , allRolls: [
-                ...appData.allRolls
+            , allDice: [
+                ...appData.allDice
                 , {
                     dieName: "selected die"
-                    , roll: "selected roll"
+                    , roll: selected roll
                     , time: Date.now()
                 }
             ]

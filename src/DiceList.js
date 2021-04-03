@@ -8,11 +8,9 @@ import {
     , ListItem
     , ListItemIcon
     , ListItemText
-    , IconButton
 } from '@material-ui/core';
 import Casino from '@material-ui/icons/Casino';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import AddIcon from '@material-ui/icons/Add';
 import { useHistory } from 'react-router-dom';
 import Nav from './Nav';
 

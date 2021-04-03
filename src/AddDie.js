@@ -20,7 +20,11 @@ const useStyles = makeStyles({
     }
 });
 
-function AddDice() {
+const addDie = () => {
+    
+}
+
+const AddDice = () => {
     const classes = useStyles();
     const history = useHistory();
 
@@ -54,7 +58,11 @@ function AddDice() {
                     <br />
                     <br />
                     
-                    <Button variant="contained" color="secondary">
+                    <Button
+                        variant="contained"
+                        color="secondary"
+                        onClick={addDie}
+                    >
                         Add Die
                     </Button>
                 </div>

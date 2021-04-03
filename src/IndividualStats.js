@@ -6,14 +6,12 @@ import {
     , Container
     , List
     , ListItem
-    , ListItemIcon
     , ListItemText
     , ListSubheader
     , IconButton
     , Divider
 } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import AddIcon from '@material-ui/icons/Add';
 import { useHistory } from 'react-router-dom';
 import Nav from './Nav';
 
