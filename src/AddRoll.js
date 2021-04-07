@@ -6,26 +6,30 @@ import {
     , Container
     , Button
     , IconButton
-} from '@material-ui/core';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import { 
-    Slider
+    , Slider
     , Select
     , InputLabel
-    , MenuItem 
-    , FormHelperText
+    , MenuItem
+    , makeStyles
+    , FormControl
 } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
     root: {
         textAlign: "center",
-        margin: "0 0 5em 0"
     }
     , slider: {
         height: 500,
-        margin: 35
+        margin: "1em"
+    }
+    , formControl: {
+        minWidth: 120
+    }
+    , button: {
+        display: "Block",
+        margin: "1em auto"
     }
 });
 
@@ -189,7 +193,8 @@ const AddRoll = () => {
                     />
                 </div>
 
-                <InputLabel id="die-select-label">Die</InputLabel>
+                <FormControl className={classes.formControl}>
+                    <InputLabel id="die-select-label">Die</InputLabel>
                     <Select
                         labelId="die-select-label"
                         id="die-select"
@@ -203,9 +208,11 @@ const AddRoll = () => {
                         <MenuItem value={"Green and Gold"}>Green and Gold</MenuItem>
                         <MenuItem value={"Purple"}>Purple</MenuItem>
                     </Select>
-                <FormHelperText>Required</FormHelperText>
+                </FormControl>
+                
 
                 <Button
+                     className={classes.button}
                     variant="contained"
                     color="secondary"
                     onClick={addRoll}
