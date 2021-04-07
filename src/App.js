@@ -27,7 +27,7 @@ function App() {
                 ]
             }
             , {
-                dieName: "Green"
+                dieName: "Green and Gold"
                 , rolls: [
                     {
                         roll: 13

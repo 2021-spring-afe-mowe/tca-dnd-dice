@@ -8,7 +8,13 @@ import {
     , IconButton
 } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import { Slider } from '@material-ui/core';
+import { 
+    Slider
+    , Select
+    , InputLabel
+    , MenuItem 
+    , FormHelperText
+} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
 
@@ -106,9 +112,52 @@ const marks = [
     }
 ];
 
-function AddRoll() {
+const AddRoll = () => {
     const classes = useStyles();
     const history = useHistory();
+    
+    // slider update
+    const [value, setValue] = useState(10);
+  
+    const handleSliderChange = (e, newValue) => {
+        setValue(newValue);
+        updateData("roll", newValue);
+    };
+    
+    // die select update
+    const [name, setName] = useState('');
+  
+    const handleSelectChange = (e) => {
+        setName(e.target.value);
+        updateData("die", e.target.value);
+    };
+
+    //new roll update
+    const initialState = {
+        roll: value
+        , die: name
+      };
+
+    const [newRoll, setNewRoll] = useState(initialState);
+
+    const updateData = (type, data) => {
+        const formData = {
+            ...newRoll
+            , [type]: data
+        };
+        //console.log(formData);
+        setNewRoll(formData);
+    };
+    
+    // add the roll
+    const addRoll = () => {
+        if (newRoll.die) {
+            console.log(newRoll.die);
+            console.log(newRoll.roll);
+        } else {
+            return alert("Please choose a die!");
+        }
+    }
 
     return (
         <>
@@ -128,17 +177,39 @@ function AddRoll() {
             <Container className={classes.root}>
                 <div className={classes.slider}>
                     <Slider
-                        defaultValue={10}
                         valueLabelDisplay="auto"
                         step={1}
                         marks={marks}
                         min={1}
                         max={20}
                         orientation="vertical"
+                        onChange={handleSliderChange}
+                        defaultValue={10}
+                        value={value}
                     />
                 </div>
 
-                <Button variant="contained" color="secondary">
+                <InputLabel id="die-select-label">Die</InputLabel>
+                    <Select
+                        labelId="die-select-label"
+                        id="die-select"
+                        value={name}
+                        onChange={handleSelectChange}
+                    >
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={"Blue Speckled"}>Blue Speckled</MenuItem>
+                        <MenuItem value={"Green and Gold"}>Green and Gold</MenuItem>
+                        <MenuItem value={"Purple"}>Purple</MenuItem>
+                    </Select>
+                <FormHelperText>Required</FormHelperText>
+
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={addRoll}
+                >
                     Add Roll
                 </Button>
             </Container>

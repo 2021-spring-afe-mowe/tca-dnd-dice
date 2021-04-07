@@ -39,7 +39,7 @@ const AddDice = () => {
         if (newDie.name) {
             console.log(newDie.name);
         } else {
-            console.log("please enter a name");
+            return alert("Please enter a name!");
         }
     }
 
