@@ -9,35 +9,29 @@ import {
     , HashRouter as Router
   } from 'react-router-dom';
 
-function App() {
+const App = () => {
 
     const initialAppData = {
-        allDice: [
+        allRolls: [
             {
                 dieName: "Blue Speckled"
-                , rolls: [
-                    {
-                        roll: 5
-                        , time: "9pm on saturday"
-                    }
-                    , {
-                        roll: 18
-                        , time: "10pm on saturday"
-                    }
-                ]
+                , roll: 5
+                , time: "9pm on saturday"
             }
             , {
                 dieName: "Green and Gold"
-                , rolls: [
-                    {
-                        roll: 13
-                        , time: "9:30pm on saturday"
-                    }
-                    , {
-                        roll: 20
-                        , time: "11pm on saturday"
-                    }
-                ]
+                , roll: 13
+                , time: "9:30pm on saturday"
+            }
+            , {
+                dieName: "Green and Gold"
+                , roll: 19
+                , time: "10:30pm on saturday"
+            }
+            , {
+                dieName: "Green and Gold"
+                , roll: 8
+                , time: "11:30pm on saturday"
             }
         ]
     };
@@ -46,22 +40,21 @@ function App() {
 
     console.log(appData);
 
-/*    const rollDie = (rollData) => {
+    const rollDie = (rollData) => {
         updateAppData({
             ...appData
-            , allDice: [
-                ...appData.allDice
+            , allRolls: [
+                ...appData.allRolls
                 , {
-                    dieName: "selected die"
-                    , rolls: [
-                        roll: selected roll
-                        , time: Date.now()
-                    ]
+                    dieName: rollData.die
+                    , roll: rollData.roll
+                    , time: Date.now()
                 }
             ]
         });
+        console.log(appData);
     }
-*/
+
 
     return (
         <Router>

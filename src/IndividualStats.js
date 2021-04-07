@@ -14,8 +14,7 @@ import {
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { useHistory } from 'react-router-dom';
 import Nav from './Nav';
-
-function IndividualStats() {
+const IndividualStats = () => {
     const history = useHistory();
 
     return (

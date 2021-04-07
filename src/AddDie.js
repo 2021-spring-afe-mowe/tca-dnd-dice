@@ -38,6 +38,11 @@ const AddDice = () => {
     const addDie = () => {
         if (newDie.name) {
             console.log(newDie.name);
+/*            rollDie({
+                roll: ""
+                , die: newDie.name
+            });
+*/
         } else {
             return alert("Please enter a name!");
         }

@@ -15,6 +15,7 @@ import {
 } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { useHistory } from 'react-router-dom';
+import App from './App';
 
 const useStyles = makeStyles({
     root: {
@@ -158,6 +159,7 @@ const AddRoll = () => {
         if (newRoll.die) {
             console.log(newRoll.die);
             console.log(newRoll.roll);
+//            rollDie(newRoll);
         } else {
             return alert("Please choose a die!");
         }
