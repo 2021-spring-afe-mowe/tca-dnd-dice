@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     AppBar
     , Toolbar
@@ -20,13 +20,28 @@ const useStyles = makeStyles({
     }
 });
 
-const addDie = () => {
-    
-}
+const initialState = '';
 
 const AddDice = () => {
     const classes = useStyles();
     const history = useHistory();
+
+    const [newDie, updateNewDie] = useState(initialState);
+
+    const updateData = (e) => {
+        const formData = {
+            name: e.target.value
+        };
+        updateNewDie(formData);
+    };
+    
+    const addDie = () => {
+        if (newDie.name) {
+            console.log(newDie.name);
+        } else {
+            console.log("please enter a name");
+        }
+    }
 
     return (
         <>
@@ -53,6 +68,8 @@ const AddDice = () => {
                         variant="outlined"
                         margin="normal"
                         position="center"
+                        value={newDie.dieName}
+                        onChange={updateData}
                     />
 
                     <br />

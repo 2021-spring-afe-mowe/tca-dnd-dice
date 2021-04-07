@@ -6,7 +6,7 @@ import AddRoll from './AddRoll';
 import { 
     Route
     , Switch
-    , BrowserRouter as Router
+    , HashRouter as Router
   } from 'react-router-dom';
 
 function App() {
@@ -53,8 +53,10 @@ function App() {
                 ...appData.allDice
                 , {
                     dieName: "selected die"
-                    , roll: selected roll
-                    , time: Date.now()
+                    , rolls: [
+                        roll: selected roll
+                        , time: Date.now()
+                    ]
                 }
             ]
         });

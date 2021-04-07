@@ -3,7 +3,7 @@ import { Slider } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
-    root: {
+    slider: {
         height: 500,
         margin: 35
     }
@@ -95,7 +95,7 @@ const marks = [
 function RollSlider() {
     const classes = useStyles();
     return (
-        <div className={classes.root}>
+        <div className={classes.slider}>
             <Slider
                 defaultValue={10}
                 valueLabelDisplay="auto"
