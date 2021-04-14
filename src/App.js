@@ -55,7 +55,9 @@ const App = () => {
         console.log(appData);
     }
 
+    // get dice names and filter out duplicates
     let diceNames = appData.allRolls.map(x => x.dieName);
+    diceNames = [...new Set(diceNames)];
     console.log("dice names: " + diceNames);
 
 
