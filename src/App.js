@@ -55,12 +55,17 @@ const App = () => {
         console.log(appData);
     }
 
+    let diceNames = appData.allRolls.map(x => x.dieName);
+    console.log("dice names: " + diceNames);
+
 
     return (
         <Router>
             <Switch>
                 <Route path="/individualStats">
-                    <IndividualStats />
+                    <IndividualStats
+                        appData={appData}
+                    />
                 </Route>
                 <Route path="/addRoll">
                     <AddRoll
@@ -73,7 +78,9 @@ const App = () => {
                     />
                 </Route>
                 <Route path="/">
-                    <DiceList />
+                    <DiceList
+                        appDiceNames={diceNames}
+                    />
                 </Route>
             </Switch>
         </Router>

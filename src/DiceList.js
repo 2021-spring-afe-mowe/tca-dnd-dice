@@ -14,7 +14,7 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { useHistory } from 'react-router-dom';
 import Nav from './Nav';
 
-export const DiceList = () => {
+export const DiceList = ({ appDiceNames }) => {
     const history = useHistory();
 
     const individualStats = () => {
