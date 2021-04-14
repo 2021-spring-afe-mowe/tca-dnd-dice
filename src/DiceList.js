@@ -10,6 +10,7 @@ import {
     , ListItemText
     , Collapse
     , Divider
+    , makeStyles
 } from '@material-ui/core';
 import Casino from '@material-ui/icons/Casino';
 import ExpandLess from '@material-ui/icons/ExpandLess';
@@ -17,7 +18,21 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import { useHistory } from 'react-router-dom';
 import Nav from './Nav';
 
+const useStyles = makeStyles({
+    list: {
+        margin: "0 0 2em 0"
+    }
+    , statLabel: {
+        paddingBottom: "0"
+    }
+    , stat: {
+        paddingTop: "0",
+        margin: "0 0 0 2em"
+    }
+});
+
 export const DiceList = ({ appDiceNames, appData }) => {
+    const classes = useStyles();
     const history = useHistory();
 
     // collapse stuff
@@ -43,6 +58,16 @@ export const DiceList = ({ appDiceNames, appData }) => {
         return average;
     }
 
+    // get 20s
+    const getTwenties = ( dieName ) => {
+        return getRollData(dieName).filter(x => x == 20).length
+    }
+
+    // get 20s
+    const getOnes = ( dieName ) => {
+        return getRollData(dieName).filter(x => x == 1).length
+    }
+
     // generate dice buttons
     const diceButtons = appDiceNames.map(x =>
         <>
@@ -58,14 +83,23 @@ export const DiceList = ({ appDiceNames, appData }) => {
         <Divider />
         <Collapse in={open}>
             <List component="div" disablePadding>
-                <ListItem>
-                    <ListItemText primary="Average Roll: " secondary={getAverage(x)}/>
+                <ListItem className={classes.statLabel}>
+                    <ListItemText primary="Average Roll:" />
                 </ListItem>
-                <ListItem>
-                    <ListItemText primary="20's Rolled: " />
+                <ListItem className={classes.stat}>
+                    <ListItemText primary={getAverage(x)} />
                 </ListItem>
-                <ListItem>
-                    <ListItemText primary="1's Rolled: " />
+                <ListItem className={classes.statLabel}>
+                    <ListItemText primary="20's Rolled:" />
+                </ListItem>
+                <ListItem className={classes.stat}>
+                    <ListItemText primary={getTwenties(x)} />
+                </ListItem>
+                <ListItem className={classes.statLabel}>
+                    <ListItemText primary="1's Rolled:" />
+                </ListItem>
+                <ListItem className={classes.stat}>
+                    <ListItemText primary={getOnes(x)} />
                 </ListItem>
             </List>
         </Collapse>
@@ -84,7 +118,7 @@ export const DiceList = ({ appDiceNames, appData }) => {
             </AppBar>
             
             <Container>
-                <List>
+                <List className={classes.list}>
                     {diceButtons}
                 </List>
             </Container>
