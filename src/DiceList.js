@@ -9,9 +9,9 @@ import {
     , ListItemIcon
     , ListItemText
     , Collapse
+    , Divider
 } from '@material-ui/core';
 import Casino from '@material-ui/icons/Casino';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import { useHistory } from 'react-router-dom';
@@ -38,6 +38,7 @@ export const DiceList = ({ appDiceNames, appData }) => {
             <ListItemText primary={x} />
             {open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
+        <Divider />
         <Collapse in={open}>
             <List component="div" disablePadding>
                 <ListItem>
@@ -51,6 +52,7 @@ export const DiceList = ({ appDiceNames, appData }) => {
                 </ListItem>
             </List>
         </Collapse>
+        <Divider />
         </>
     );
 
