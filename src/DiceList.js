@@ -21,6 +21,19 @@ export const DiceList = ({ appDiceNames }) => {
         history.push("/individualStats");
     }
 
+    // generate dice buttons
+    const diceButtons = appDiceNames.map(x =>
+        <ListItem button
+            onClick={individualStats}
+        >
+            <ListItemIcon>
+                <Casino />
+            </ListItemIcon>
+            <ListItemText primary={x} />
+            <ArrowForwardIosIcon />
+        </ListItem>
+    )
+
     return (
         <div>
             <AppBar position="static">
@@ -33,36 +46,7 @@ export const DiceList = ({ appDiceNames }) => {
             
             <Container>
                 <List>
-                    <ListItem button
-                        onClick={individualStats}
-                    >
-                        <ListItemIcon>
-                            <Casino />
-                        </ListItemIcon>
-                        <ListItemText primary="Blue Speckled" />
-                        <ArrowForwardIosIcon />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <Casino />
-                        </ListItemIcon>
-                        <ListItemText primary="Green and Gold" />
-                        <ArrowForwardIosIcon />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <Casino />
-                        </ListItemIcon>
-                        <ListItemText primary="White Speckled" />
-                        <ArrowForwardIosIcon />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <Casino />
-                        </ListItemIcon>
-                        <ListItemText primary="Purple" />
-                        <ArrowForwardIosIcon />
-                    </ListItem>
+                    {diceButtons}
                 </List>
             </Container>
 

@@ -70,6 +70,7 @@ const App = () => {
                 <Route path="/addRoll">
                     <AddRoll
                         appAddData={addData}
+                        appDiceNames={diceNames}
                     />
                 </Route>
                 <Route path="/addDie">

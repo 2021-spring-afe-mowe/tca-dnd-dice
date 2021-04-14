@@ -26,8 +26,10 @@ const AddDice = ({ appAddData }) => {
     const classes = useStyles();
     const history = useHistory();
 
+    // add die with blank roll so it shows up in the lists
     const [newDie, updateNewDie] = useState(initialState);
 
+    // update form
     const updateData = (e) => {
         const formData = {
             name: e.target.value
@@ -35,6 +37,7 @@ const AddDice = ({ appAddData }) => {
         updateNewDie(formData);
     };
     
+    // add the die
     const addDie = () => {
         if (newDie.name) {
             console.log(newDie.name);

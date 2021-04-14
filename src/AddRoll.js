@@ -117,9 +117,14 @@ const marks = [
     }
 ];
 
-const AddRoll = ({ appAddData }) => {
+const AddRoll = ({ appAddData, appDiceNames }) => {
     const classes = useStyles();
     const history = useHistory();
+
+    // generate select die options
+    const selectOptions = appDiceNames.map(x =>
+        <MenuItem value={x}>{x}</MenuItem>
+    );
     
     // slider update
     const [value, setValue] = useState(10);
@@ -206,9 +211,7 @@ const AddRoll = ({ appAddData }) => {
                         <MenuItem value="">
                             <em>None</em>
                         </MenuItem>
-                        <MenuItem value={"Blue Speckled"}>Blue Speckled</MenuItem>
-                        <MenuItem value={"Green and Gold"}>Green and Gold</MenuItem>
-                        <MenuItem value={"Purple"}>Purple</MenuItem>
+                        {selectOptions}
                     </Select>
                 </FormControl>
                 
