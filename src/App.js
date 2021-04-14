@@ -40,7 +40,7 @@ const App = () => {
 
     console.log(appData);
 
-    const rollDie = (rollData) => {
+    const addData = (rollData) => {
         updateAppData({
             ...appData
             , allRolls: [
@@ -62,14 +62,15 @@ const App = () => {
                 <Route path="/individualStats">
                     <IndividualStats />
                 </Route>
-                <Route path="/addDie">
-                    <AddDie />
-                </Route>
                 <Route path="/addRoll">
-                    <AddRoll />
+                    <AddRoll
+                        appAddData={addData}
+                    />
                 </Route>
                 <Route path="/addDie">
-                    <AddDie />
+                    <AddDie
+                        appAddData={addData}
+                    />
                 </Route>
                 <Route path="/">
                     <DiceList />

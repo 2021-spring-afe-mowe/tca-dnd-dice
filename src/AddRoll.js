@@ -117,7 +117,7 @@ const marks = [
     }
 ];
 
-const AddRoll = () => {
+const AddRoll = ({ appAddData }) => {
     const classes = useStyles();
     const history = useHistory();
     
@@ -159,7 +159,7 @@ const AddRoll = () => {
         if (newRoll.die) {
             console.log(newRoll.die);
             console.log(newRoll.roll);
-//            rollDie(newRoll);
+            appAddData(newRoll);
         } else {
             return alert("Please choose a die!");
         }
@@ -224,6 +224,6 @@ const AddRoll = () => {
             </Container>
         </>
     );
-  }
+}
 
 export default AddRoll;

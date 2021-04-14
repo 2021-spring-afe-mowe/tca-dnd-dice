@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 
 const initialState = '';
 
-const AddDice = () => {
+const AddDice = ({ appAddData }) => {
     const classes = useStyles();
     const history = useHistory();
 
@@ -38,11 +38,11 @@ const AddDice = () => {
     const addDie = () => {
         if (newDie.name) {
             console.log(newDie.name);
-/*            rollDie({
+            appAddData({
                 roll: ""
                 , die: newDie.name
             });
-*/
+
         } else {
             return alert("Please enter a name!");
         }
