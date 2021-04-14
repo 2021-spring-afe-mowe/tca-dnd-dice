@@ -64,11 +64,6 @@ const App = () => {
     return (
         <Router>
             <Switch>
-                <Route path="/individualStats">
-                    <IndividualStats
-                        appData={appData}
-                    />
-                </Route>
                 <Route path="/addRoll">
                     <AddRoll
                         appAddData={addData}
@@ -83,6 +78,7 @@ const App = () => {
                 <Route path="/">
                     <DiceList
                         appDiceNames={diceNames}
+                        appData={appData}
                     />
                 </Route>
             </Switch>

@@ -8,31 +8,51 @@ import {
     , ListItem
     , ListItemIcon
     , ListItemText
+    , Collapse
 } from '@material-ui/core';
 import Casino from '@material-ui/icons/Casino';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
 import { useHistory } from 'react-router-dom';
 import Nav from './Nav';
 
-export const DiceList = ({ appDiceNames }) => {
+export const DiceList = ({ appDiceNames, appData }) => {
     const history = useHistory();
 
-    const individualStats = () => {
-        history.push("/individualStats");
-    }
+    const [open, setOpen] = React.useState(true);
+  
+    const handleClick = () => {
+      setOpen(!open);
+    };
 
     // generate dice buttons
     const diceButtons = appDiceNames.map(x =>
+        <>
         <ListItem button
-            onClick={individualStats}
+            onClick={handleClick}
         >
             <ListItemIcon>
                 <Casino />
             </ListItemIcon>
             <ListItemText primary={x} />
-            <ArrowForwardIosIcon />
+            {open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
-    )
+        <Collapse in={open}>
+            <List component="div" disablePadding>
+                <ListItem>
+                    <ListItemText primary="Average Roll: " />
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="20's Rolled: " />
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="1's Rolled: " />
+                </ListItem>
+            </List>
+        </Collapse>
+        </>
+    );
 
     return (
         <div>
