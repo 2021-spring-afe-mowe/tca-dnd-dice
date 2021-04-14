@@ -1,7 +1,6 @@
 import { React, useState } from 'react';
 import DiceList from './DiceList';
 import AddDie from './AddDie';
-import IndividualStats from './IndividualStats';
 import AddRoll from './AddRoll';
 import { 
     Route

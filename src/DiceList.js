@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import {
     AppBar
     , Toolbar
@@ -20,11 +20,28 @@ import Nav from './Nav';
 export const DiceList = ({ appDiceNames, appData }) => {
     const history = useHistory();
 
-    const [open, setOpen] = React.useState(true);
+    // collapse stuff
+    const [open, setOpen] = useState(true);
   
     const handleClick = () => {
       setOpen(!open);
     };
+
+    let rollData;
+
+    //get roll data
+    const getRollData = ( dieName ) => {
+        rollData = appData.allRolls.filter(x => x.dieName == dieName);
+        rollData = rollData.map(x => x.roll);
+        console.log(rollData);
+        return rollData;
+    }
+
+    //get average
+    const getAverage = ( dieName ) => {
+        let average = getRollData(dieName).reduce((a, value) => a + value, 0) / getRollData(dieName).length;
+        return average;
+    }
 
     // generate dice buttons
     const diceButtons = appDiceNames.map(x =>
@@ -42,7 +59,7 @@ export const DiceList = ({ appDiceNames, appData }) => {
         <Collapse in={open}>
             <List component="div" disablePadding>
                 <ListItem>
-                    <ListItemText primary="Average Roll: " />
+                    <ListItemText primary="Average Roll: " secondary={getAverage(x)}/>
                 </ListItem>
                 <ListItem>
                     <ListItemText primary="20's Rolled: " />
