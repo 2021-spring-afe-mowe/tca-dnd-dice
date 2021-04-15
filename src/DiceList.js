@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     }
     , stat: {
         paddingTop: "0",
-        paddingRight: "0",
+        maxWidth: "60%",
         margin: "0 0 0 2em"
     }
 });
@@ -48,8 +48,9 @@ export const DiceList = ({ appDiceNames, appData }) => {
     //get roll data
     const getRollData = ( dieName ) => {
         rollData = appData.allRolls.filter(x => x.dieName == dieName);
+        rollData = rollData.filter(x => x.roll !== null);
         rollData = rollData.map(x => x.roll);
-        console.log(rollData);
+        console.log(dieName + " rolls: " + rollData);
         return rollData;
     }
 

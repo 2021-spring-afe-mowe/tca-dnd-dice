@@ -42,7 +42,7 @@ const AddDice = ({ appAddData }) => {
         if (newDie.name) {
             console.log(newDie.name);
             appAddData({
-                roll: ""
+                roll: null
                 , die: newDie.name
             });
 
