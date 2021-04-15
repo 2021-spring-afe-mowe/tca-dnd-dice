@@ -27,6 +27,7 @@ const useStyles = makeStyles({
     }
     , stat: {
         paddingTop: "0",
+        paddingRight: "0",
         margin: "0 0 0 2em"
     }
 });
