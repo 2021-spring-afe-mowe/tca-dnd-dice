@@ -57,7 +57,11 @@ export const DiceList = ({ appDiceNames, appData }) => {
     //get average
     const getAverage = ( dieName ) => {
         let average = getRollData(dieName).reduce((a, value) => a + value, 0) / getRollData(dieName).length;
-        return average;
+        if (average) {
+            return average;
+        } else {
+            return "Never rolled";
+        }
     }
 
     // get 20s

@@ -7,10 +7,16 @@ import {
     , TextField
     , Button
     , IconButton
+    , Snackbar
 } from '@material-ui/core';
+import MuiAlert from '@material-ui/lab/Alert';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
+
+const Alert = (props) => {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const useStyles = makeStyles({
     root: {
@@ -25,6 +31,17 @@ const initialState = '';
 const AddDice = ({ appAddData }) => {
     const classes = useStyles();
     const history = useHistory();
+
+    // set open state for success popup
+    const [open, setOpen] = useState(false);
+
+    const handleClose = (e, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpen(false);
+    };
+
 
     // add die with blank roll so it shows up in the lists
     const [newDie, updateNewDie] = useState(initialState);
@@ -45,7 +62,7 @@ const AddDice = ({ appAddData }) => {
                 roll: null
                 , die: newDie.name
             });
-
+            setOpen(true);
         } else {
             return alert("Please enter a name!");
         }
@@ -90,6 +107,11 @@ const AddDice = ({ appAddData }) => {
                     >
                         Add Die
                     </Button>
+                    <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+                        <Alert onClose={handleClose} severity="success">
+                            Die added!
+                        </Alert>
+                    </Snackbar>
                 </div>
             </Container>
         </>
