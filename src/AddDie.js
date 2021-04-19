@@ -42,7 +42,6 @@ const AddDice = ({ appAddData }) => {
         setOpen(false);
     };
 
-
     // add die with blank roll so it shows up in the lists
     const [newDie, updateNewDie] = useState(initialState);
 

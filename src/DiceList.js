@@ -34,7 +34,6 @@ const useStyles = makeStyles({
 
 export const DiceList = ({ appDiceNames, appData }) => {
     const classes = useStyles();
-    const history = useHistory();
 
     // collapse stuff
     const [open, setOpen] = useState(true);

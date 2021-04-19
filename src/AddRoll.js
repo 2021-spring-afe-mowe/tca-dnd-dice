@@ -14,9 +14,13 @@ import {
     , FormControl
     , Snackbar
 } from '@material-ui/core';
+import MuiAlert from '@material-ui/lab/Alert';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { useHistory } from 'react-router-dom';
-import App from './App';
+
+const Alert = (props) => {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const useStyles = makeStyles({
     root: {
@@ -122,6 +126,16 @@ const AddRoll = ({ appAddData, appDiceNames }) => {
     const classes = useStyles();
     const history = useHistory();
 
+    // set open state for success popup
+    const [open, setOpen] = useState(false);
+
+    const handleClose = (e, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpen(false);
+    };
+
     // generate select die options
     const selectOptions = appDiceNames.map(x =>
         <MenuItem value={x}>{x}</MenuItem>
@@ -166,6 +180,7 @@ const AddRoll = ({ appAddData, appDiceNames }) => {
             console.log(newRoll.die);
             console.log(newRoll.roll);
             appAddData(newRoll);
+            setOpen(true);
         } else {
             return alert("Please choose a die!");
         }
@@ -225,6 +240,11 @@ const AddRoll = ({ appAddData, appDiceNames }) => {
                 >
                     Add Roll
                 </Button>
+                <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+                    <Alert onClose={handleClose} severity="success">
+                        Roll added!
+                    </Alert>
+                </Snackbar>
             </Container>
         </>
     );
