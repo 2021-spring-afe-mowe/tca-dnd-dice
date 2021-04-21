@@ -36,17 +36,17 @@ export const DiceList = ({ appDiceNames, appData }) => {
     const classes = useStyles();
 
     // collapse stuff
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
   
-    const handleClick = () => {
-      setOpen(!open);
+    const dropdownControl = () => {
+        setOpen(!open);
     };
 
     let rollData;
 
     //get roll data
     const getRollData = ( dieName ) => {
-        rollData = appData.allRolls.filter(x => x.dieName == dieName);
+        rollData = appData.allRolls.filter(x => x.dieName === dieName);
         rollData = rollData.filter(x => x.roll !== null);
         rollData = rollData.map(x => x.roll);
         console.log(dieName + " rolls: " + rollData);
@@ -65,19 +65,19 @@ export const DiceList = ({ appDiceNames, appData }) => {
 
     // get 20s
     const getTwenties = ( dieName ) => {
-        return getRollData(dieName).filter(x => x == 20).length
+        return getRollData(dieName).filter(x => x === 20).length
     }
 
     // get 20s
     const getOnes = ( dieName ) => {
-        return getRollData(dieName).filter(x => x == 1).length
+        return getRollData(dieName).filter(x => x === 1).length
     }
 
     // generate dice buttons
     const diceButtons = appDiceNames.map(x =>
         <>
         <ListItem button
-            onClick={handleClick}
+            onClick={dropdownControl}
         >
             <ListItemIcon>
                 <Casino />
@@ -86,7 +86,7 @@ export const DiceList = ({ appDiceNames, appData }) => {
             {open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Divider />
-        <Collapse in={open}>
+        <Collapse in={true}>
             <List component="div" disablePadding>
                 <ListItem className={classes.statLabel}>
                     <ListItemText primary="Average Roll:" />
