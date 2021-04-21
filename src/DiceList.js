@@ -86,7 +86,7 @@ export const DiceList = ({ appDiceNames, appData }) => {
             {open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Divider />
-        <Collapse in={true}>
+        <Collapse in={open}>
             <List component="div" disablePadding>
                 <ListItem className={classes.statLabel}>
                     <ListItemText primary="Average Roll:" />
