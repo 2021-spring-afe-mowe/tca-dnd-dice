@@ -11,10 +11,14 @@ import {
     , Collapse
     , Divider
     , makeStyles
+    , Card
+    , CardContent
 } from '@material-ui/core';
 import Casino from '@material-ui/icons/Casino';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
+import CasinoOutlined from '@material-ui/icons/CasinoOutlined';
+import { useHistory } from 'react-router-dom';
 import Nav from './Nav';
 
 const useStyles = makeStyles({
@@ -34,10 +38,19 @@ const useStyles = makeStyles({
         margin: "0 0 0 2em",
         color: "#008573"
     }
+    , noStats: {
+        textAlign: "center",
+        margin: "4em auto"
+    }
 });
 
 export const DiceList = ({ appDiceNames, appData }) => {
     const classes = useStyles();
+    const history = useHistory();
+
+    const onLink = (href) => {
+      history.push(href);
+    };
 
     // collapse stuff
     const [open, setOpen] = useState(false);
@@ -70,6 +83,7 @@ export const DiceList = ({ appDiceNames, appData }) => {
     // get times rolled
     const getTimesRolled = ( dieName ) => {
         return getRollData(dieName).length;
+        
     }
 
     // get 20s
@@ -84,7 +98,12 @@ export const DiceList = ({ appDiceNames, appData }) => {
 
     // get most recent roll
     const getMostRecent = ( dieName ) => {
-        return getRollData(dieName)[getRollData(dieName).length - 1];
+        let lastRoll = getRollData(dieName)[getRollData(dieName).length - 1];
+        if (lastRoll) {
+            return lastRoll;
+        } else {
+            return "Never rolled";
+        }
     }
 
     // generate dice buttons
@@ -141,25 +160,51 @@ export const DiceList = ({ appDiceNames, appData }) => {
         </>
     );
 
-    return (
-        <div>
-            <AppBar position="static">
-                <Toolbar>
-                    <Typography variant="h6">
-                        Dice
+    if (appDiceNames.length == 0) {
+        return (
+            <div>
+                <AppBar position="static">
+                    <Toolbar>
+                        <Typography variant="h6">
+                            Dice
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+                
+                <Container
+                    className={classes.noStats} 
+                    onClick={() => onLink("/addRoll")}
+                >
+                    <CasinoOutlined style={{ fontSize: 40 }}  color="Secondary"/>
+                    <Typography color="textSecondary">
+                        Add dice to see stats!
                     </Typography>
-                </Toolbar>
-            </AppBar>
-            
-            <Container>
-                <List className={classes.list}>
-                    {diceButtons}
-                </List>
-            </Container>
+                </Container>
 
-            <Nav />
-        </div>
-    );
+                <Nav />
+            </div>
+        );
+    } else {
+        return (
+            <div>
+                <AppBar position="static">
+                    <Toolbar>
+                        <Typography variant="h6">
+                            Dice
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+                
+                <Container>
+                    <List className={classes.list}>
+                        {diceButtons}
+                    </List>
+                </Container>
+
+                <Nav />
+            </div>
+        );
+    }
 }
 
 export default DiceList;

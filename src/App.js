@@ -25,26 +25,26 @@ const App = () => {
 
     const initialAppData = {
         allRolls: [
-            {
-                dieName: "Blue Speckled"
-                , roll: 5
-                , time: "9pm on saturday"
-            }
-            , {
-                dieName: "Green and Gold"
-                , roll: 13
-                , time: "9:30pm on saturday"
-            }
-            , {
-                dieName: "Green and Gold"
-                , roll: 19
-                , time: "10:30pm on saturday"
-            }
-            , {
-                dieName: "Green and Gold"
-                , roll: 8
-                , time: "11:30pm on saturday"
-            }
+            // {
+            //     dieName: "Blue Speckled"
+            //     , roll: 5
+            //     , time: "9pm on saturday"
+            // }
+            // , {
+            //     dieName: "Green and Gold"
+            //     , roll: 13
+            //     , time: "9:30pm on saturday"
+            // }
+            // , {
+            //     dieName: "Green and Gold"
+            //     , roll: 19
+            //     , time: "10:30pm on saturday"
+            // }
+            // , {
+            //     dieName: "Green and Gold"
+            //     , roll: 8
+            //     , time: "11:30pm on saturday"
+            // }
         ]
     };
 
