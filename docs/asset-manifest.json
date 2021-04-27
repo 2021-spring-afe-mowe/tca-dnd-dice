@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/tca-dnd-dice/static/css/main.b9e48519.chunk.css",
-    "main.js": "/tca-dnd-dice/static/js/main.eec5accb.chunk.js",
-    "main.js.map": "/tca-dnd-dice/static/js/main.eec5accb.chunk.js.map",
-    "runtime-main.js": "/tca-dnd-dice/static/js/runtime-main.bfcda323.js",
-    "runtime-main.js.map": "/tca-dnd-dice/static/js/runtime-main.bfcda323.js.map",
-    "static/js/2.3730bccc.chunk.js": "/tca-dnd-dice/static/js/2.3730bccc.chunk.js",
-    "static/js/2.3730bccc.chunk.js.map": "/tca-dnd-dice/static/js/2.3730bccc.chunk.js.map",
-    "static/js/3.d132b0d9.chunk.js": "/tca-dnd-dice/static/js/3.d132b0d9.chunk.js",
-    "static/js/3.d132b0d9.chunk.js.map": "/tca-dnd-dice/static/js/3.d132b0d9.chunk.js.map",
+    "main.js": "/tca-dnd-dice/static/js/main.f579acc7.chunk.js",
+    "main.js.map": "/tca-dnd-dice/static/js/main.f579acc7.chunk.js.map",
+    "runtime-main.js": "/tca-dnd-dice/static/js/runtime-main.18484b39.js",
+    "runtime-main.js.map": "/tca-dnd-dice/static/js/runtime-main.18484b39.js.map",
+    "static/js/2.ed0dbc3b.chunk.js": "/tca-dnd-dice/static/js/2.ed0dbc3b.chunk.js",
+    "static/js/2.ed0dbc3b.chunk.js.map": "/tca-dnd-dice/static/js/2.ed0dbc3b.chunk.js.map",
+    "static/js/3.36c5cadb.chunk.js": "/tca-dnd-dice/static/js/3.36c5cadb.chunk.js",
+    "static/js/3.36c5cadb.chunk.js.map": "/tca-dnd-dice/static/js/3.36c5cadb.chunk.js.map",
     "index.html": "/tca-dnd-dice/index.html",
     "static/css/main.b9e48519.chunk.css.map": "/tca-dnd-dice/static/css/main.b9e48519.chunk.css.map",
-    "static/js/2.3730bccc.chunk.js.LICENSE.txt": "/tca-dnd-dice/static/js/2.3730bccc.chunk.js.LICENSE.txt"
+    "static/js/2.ed0dbc3b.chunk.js.LICENSE.txt": "/tca-dnd-dice/static/js/2.ed0dbc3b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.bfcda323.js",
-    "static/js/2.3730bccc.chunk.js",
+    "static/js/runtime-main.18484b39.js",
+    "static/js/2.ed0dbc3b.chunk.js",
     "static/css/main.b9e48519.chunk.css",
-    "static/js/main.eec5accb.chunk.js"
+    "static/js/main.f579acc7.chunk.js"
   ]
 }
