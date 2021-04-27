@@ -173,7 +173,7 @@ export const DiceList = ({ appDiceNames, appData }) => {
                 
                 <Container
                     className={classes.noStats} 
-                    onClick={() => onLink("/addRoll")}
+                    onClick={() => onLink("/addDie")}
                 >
                     <CasinoOutlined style={{ fontSize: 40 }}  color="Secondary"/>
                     <Typography color="textSecondary">
