@@ -63,14 +63,24 @@ export const DiceList = ({ appDiceNames, appData }) => {
         }
     }
 
+    // get times rolled
+    const getTimesRolled = ( dieName ) => {
+        return getRollData(dieName).length;
+    }
+
     // get 20s
     const getTwenties = ( dieName ) => {
-        return getRollData(dieName).filter(x => x === 20).length
+        return getRollData(dieName).filter(x => x === 20).length;
     }
 
     // get 20s
     const getOnes = ( dieName ) => {
-        return getRollData(dieName).filter(x => x === 1).length
+        return getRollData(dieName).filter(x => x === 1).length;
+    }
+
+    // get most recent roll
+    const getMostRecent = ( dieName ) => {
+        return getRollData(dieName)[getRollData(dieName).length - 1];
     }
 
     // generate dice buttons
@@ -95,6 +105,12 @@ export const DiceList = ({ appDiceNames, appData }) => {
                     <ListItemText primary={getAverage(x)} />
                 </ListItem>
                 <ListItem className={classes.statLabel}>
+                    <ListItemText primary="Times Rolled:" />
+                </ListItem>
+                <ListItem className={classes.stat}>
+                    <ListItemText primary={getTimesRolled(x)} />
+                </ListItem>
+                <ListItem className={classes.statLabel}>
                     <ListItemText primary="20's Rolled:" />
                 </ListItem>
                 <ListItem className={classes.stat}>
@@ -105,6 +121,12 @@ export const DiceList = ({ appDiceNames, appData }) => {
                 </ListItem>
                 <ListItem className={classes.stat}>
                     <ListItemText primary={getOnes(x)} />
+                </ListItem>
+                <ListItem className={classes.statLabel}>
+                    <ListItemText primary="Last Roll:" />
+                </ListItem>
+                <ListItem className={classes.stat}>
+                    <ListItemText primary={getMostRecent(x)} />
                 </ListItem>
             </List>
         </Collapse>
