@@ -15,20 +15,24 @@ import {
 import Casino from '@material-ui/icons/Casino';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import { useHistory } from 'react-router-dom';
 import Nav from './Nav';
 
 const useStyles = makeStyles({
     list: {
         margin: "0 0 2em 0"
     }
+    , dieName: {
+        fontSize: "24px"
+    }
     , statLabel: {
-        paddingBottom: "0"
+        paddingBottom: "0",
+        color: "#424242"
     }
     , stat: {
         paddingTop: "0",
         maxWidth: "60%",
-        margin: "0 0 0 2em"
+        margin: "0 0 0 2em",
+        color: "#008573"
     }
 });
 
@@ -90,9 +94,12 @@ export const DiceList = ({ appDiceNames, appData }) => {
             onClick={dropdownControl}
         >
             <ListItemIcon>
-                <Casino />
+                <Casino color="secondary"/>
             </ListItemIcon>
-            <ListItemText primary={x} />
+            <ListItemText
+                primary={x}
+                className={classes.dieName}
+            />
             {open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Divider />

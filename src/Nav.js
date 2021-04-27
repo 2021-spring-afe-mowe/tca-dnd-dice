@@ -1,5 +1,9 @@
 import { React, useState } from 'react';
-import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
+import {
+    BottomNavigation
+    , BottomNavigationAction
+    , Divider
+} from '@material-ui/core';
 import CasinoOutlined from '@material-ui/icons/CasinoOutlined';
 import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import { useHistory } from 'react-router-dom';
@@ -9,11 +13,11 @@ const useStyles = makeStyles({
     root: {
         position: "fixed",
         bottom: "0",
-        width: "100%"
+        width: "100%",
     }
 });
 
-function Nav() {
+const Nav = () => {
     const classes = useStyles();
     const history = useHistory();
     const [value, setValue] = useState(0);
@@ -31,17 +35,18 @@ function Nav() {
             }}
             className={classes.root}
         >
+            <Divider />
             <BottomNavigationAction
                 label="Add Dice"
                 value="/addDie"
                 onClick={() => onLink("/addDie")} 
-                icon={<FormatListNumberedIcon />}
+                icon={<FormatListNumberedIcon color="secondary"/>}
             />
             <BottomNavigationAction
                 label="Add Roll"
                 value="/addRoll"
                 onClick={() => onLink("/addRoll")}
-                icon={<CasinoOutlined />}
+                icon={<CasinoOutlined color="secondary"/>}
             />
         </BottomNavigation>
     );

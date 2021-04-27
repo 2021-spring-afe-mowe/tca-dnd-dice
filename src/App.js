@@ -7,6 +7,19 @@ import {
     , Switch
     , HashRouter as Router
   } from 'react-router-dom';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: '#b71c1c',
+        },
+        secondary: {
+            main: '#00bfa5',
+            contrastText: '#fff',
+        },
+    },
+  });
 
 const App = () => {
 
@@ -61,6 +74,7 @@ const App = () => {
 
 
     return (
+    <ThemeProvider theme={theme}>
         <Router>
             <Switch>
                 <Route path="/addRoll">
@@ -82,6 +96,7 @@ const App = () => {
                 </Route>
             </Switch>
         </Router>
+    </ThemeProvider>
     );
 }
 
