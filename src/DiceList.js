@@ -54,9 +54,27 @@ export const DiceList = ({ appDiceNames, appData }) => {
 
     // collapse stuff
     const [open, setOpen] = useState(false);
+
+    const [diceExpanded, setDiceExpanded] = useState(appDiceNames.map(x => ({
+        name: x
+        , expanded: false
+    })));
+
+    console.log(diceExpanded);
+
+    const getExpandedState = (diceName) => {
+        console.log("getexpanded", diceName);
+        const foo = diceExpanded.filter(y => y.name == diceName);
+        console.log("getexpanded2", diceExpanded);
+    }
   
-    const dropdownControl = () => {
-        setOpen(!open);
+    const dropdownControl = ( diceName ) => {
+        console.log("name ", diceName);
+        setDiceExpanded(diceExpanded.map(x => ({
+            name: x.name
+            , expanded: x.name == diceName ? !x.expanded : x.expanded            
+        })));
+        console.log("getexpanded3", diceExpanded);
     };
 
     let rollData;
@@ -110,7 +128,7 @@ export const DiceList = ({ appDiceNames, appData }) => {
     const diceButtons = appDiceNames.map(x =>
         <>
         <ListItem button
-            onClick={dropdownControl}
+            onClick={() => dropdownControl(x)}
         >
             <ListItemIcon>
                 <Casino color="secondary"/>
@@ -122,7 +140,7 @@ export const DiceList = ({ appDiceNames, appData }) => {
             {open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Divider />
-        <Collapse in={open}>
+        <Collapse in={() => getExpandedState(x)}>
             <List component="div" disablePadding>
                 <ListItem className={classes.statLabel}>
                     <ListItemText primary="Average Roll:" />
