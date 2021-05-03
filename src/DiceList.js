@@ -66,6 +66,7 @@ export const DiceList = ({ appDiceNames, appData }) => {
         console.log("getexpanded", diceName);
         const foo = diceExpanded.filter(y => y.name == diceName);
         console.log("getexpanded2", diceExpanded);
+        return foo[0].expanded;
     }
   
     const dropdownControl = ( diceName ) => {
@@ -140,7 +141,7 @@ export const DiceList = ({ appDiceNames, appData }) => {
             {open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Divider />
-        <Collapse in={() => getExpandedState(x)}>
+        <Collapse in={getExpandedState(x)}>
             <List component="div" disablePadding>
                 <ListItem className={classes.statLabel}>
                     <ListItemText primary="Average Roll:" />
